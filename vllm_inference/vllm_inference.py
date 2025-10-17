@@ -4,7 +4,7 @@ from typing import Optional
 import logging, os, json
 from vllm import LLM, SamplingParams
 import ray
-from ray_on_aml.core import Ray_On_AML
+# from ray_on_aml.core import Ray_On_AML
 import argparse
 
 
@@ -26,6 +26,7 @@ def inference(testdata_folder, testdata_file, output_folder, output_file, model_
     llm = LLM(model=model_path,
               tensor_parallel_size=tensor_parallel_size,
               trust_remote_code=trust_remote_code,
+              enforce_eager=True,
               max_num_batched_tokens=800000,
               gpu_memory_utilization=0.9)
 
