@@ -48,7 +48,8 @@ def inference(testdata_folder, testdata_file, output_folder, output_file, model_
         logger.info(f"{current_lines} in {total_lines} examples.")
         for result in results:
             all_outputs.append({'samples': [result.outputs[0].text]})
-
+    
+    os.makedirs(output_folder, exist_ok=True)
     with open(os.path.join(output_folder, output_file), "w", encoding='utf-8') as f:
         for output in all_outputs:
             f.write(json.dumps(output) + '\n')
