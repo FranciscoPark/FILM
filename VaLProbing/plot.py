@@ -13,9 +13,9 @@ from tqdm import tqdm
 
 
 model_infos = [
-    ['FILM-7B', '#E97132', '#F4B898', '-'],
-    ['Mistral-7B-Instruct-v0.2', '#7F7F7F', '#BFBFBF', '-'],
-    ['gpt4-turbo', '#0F9ED5', '#87CEEA', ':'],
+    ['Llama-3.1-8B-Instruct', '#E97132', '#F4B898', '-'],
+    ['Llama-3.2-1B-Instruct', '#7F7F7F', '#BFBFBF', '-'],
+    ['Llama-3.2-3B-Instruct', '#0F9ED5', '#87CEEA', ':'],
 ]
 
 
@@ -33,7 +33,7 @@ span_num = int(total_len/span_len)
 
 set_ids = ['set_' + str(i) for i in range(4)]
 
-with open('./VaLProbing-32K/document_bi_32k.jsonl', 'r', encoding='utf-8') as f:
+with open('./ValProbing-32K/document_bi_32k.jsonl', 'r', encoding='utf-8') as f:
     label_infos = []
     for line in tqdm(f.readlines()):
         info = json.loads(line)
@@ -141,7 +141,7 @@ span_num = int(total_len/span_len)
 
 set_ids = ['set_' + str(i) for i in range(4)]
 
-with open('./VaLProbing-32K/code_backward_32k.jsonl', 'r', encoding='utf-8') as f:
+with open('./ValProbing-32K/code_backward_32k.jsonl', 'r', encoding='utf-8') as f:
     label_infos = []
     for line in tqdm(f.readlines()):
         info = json.loads(line)
@@ -253,7 +253,7 @@ span_num = int(total_len/span_len)
 
 set_ids = ['set_' + str(i) for i in range(4)]
 
-with open('./VaLProbing-32K/database_forward_32k.jsonl', 'r', encoding='utf-8') as f:
+with open('./ValProbing-32K/database_forward_32k.jsonl', 'r', encoding='utf-8') as f:
     label_infos = []
     for line in tqdm(f.readlines()):
         info = json.loads(line)
