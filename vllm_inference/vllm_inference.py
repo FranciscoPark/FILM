@@ -4,7 +4,6 @@ from typing import Optional
 import logging, os, json
 from vllm import LLM, SamplingParams
 import ray
-# from ray_on_aml.core import Ray_On_AML
 import argparse
 
 
